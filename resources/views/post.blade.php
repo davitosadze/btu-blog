@@ -12,9 +12,9 @@
 <br>
 <h6>დაამატეთ კომენტარი:</h6>
 <form onSubmit="addComment(this)">
-    <input type="text" name="author" class="form-control" placeholder="Your Name" id="">
+    <input type="text" required name="author" class="form-control" placeholder="Your Name" id="">
     <br>
-    <textarea name="comment" id="" cols="10" rows="3" class="form-control" placeholder="Your Comment"></textarea>
+    <textarea name="comment" required id="" cols="10" rows="3" class="form-control" placeholder="Your Comment"></textarea>
     <br>
     <input type="submit" name="button" class="btn btn-primary" value="დამატება">
 </form>
