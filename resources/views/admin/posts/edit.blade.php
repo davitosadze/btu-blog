@@ -15,4 +15,38 @@
     <input type="submit" name="submit" class="btn btn-primary" value="განახლება" >
 </form>    
 
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">ავტორი</th>
+        <th scope="col">კომენტარი</th>
+
+        <th scope="col">წაშლა</th>
+      </tr>
+    </thead>
+    <tbody>
+    @foreach($post->comments as $comment)
+      <tr>
+        <th scope="row">{{$comment->id}}</th>
+        <td>{{$comment->author}}</td>
+        <td>{{$comment->comment}}</td>
+
+
+        <td>
+            <form action="{{ route('admin.comments.delete', $comment->id)}}" method="post">
+                <input class="btn btn-danger" type="submit" value="წაშლა" />
+                @method('delete')
+                @csrf
+            </form>    
+        </td>
+      </tr>
+      @endforeach
+
+      
+    </tbody>
+  </table>
+
+
 @endsection

@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 #ADMIN
 Route::get('admin', 'Admin\MainController@index')->name('admin');
+Route::delete('admin/comment/{comment_id}', 'Admin\CommentController@delete')->name('admin.comments.delete');
 Route::resource('posts', 'Admin\PostController');
  
 #MAIN
